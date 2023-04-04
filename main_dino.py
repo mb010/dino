@@ -142,6 +142,10 @@ def train_dino(args):
         args.local_crops_scale,
         args.local_crops_number,
     )
+    if args.data_path in ["rgz", "emu", "mightee", "mightee_pol"]:
+        raise NotImplementedError()
+    if args.data_path == 'imagenet':
+        args.data_path = "/share/nas2_5/mbowles/data/imagenet21k_resized/imagenet21k_train/"
     dataset = datasets.ImageFolder(args.data_path, transform=transform)
     sampler = torch.utils.data.DistributedSampler(dataset, shuffle=True)
     data_loader = torch.utils.data.DataLoader(
