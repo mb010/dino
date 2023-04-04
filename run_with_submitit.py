@@ -43,6 +43,10 @@ def get_shared_folder() -> Path:
         p = Path(f"/checkpoint/{user}/experiments")
         p.mkdir(exist_ok=True)
         return p
+    elif Path("/share/nas2_5/mbowles").is_dir():
+        p = Path(f"/share/nas2_5/mbowles/experiments")
+        p.mkdir(exist_ok=True)
+        return p
     raise RuntimeError("No shared folder available")
 
 
