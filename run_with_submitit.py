@@ -132,6 +132,7 @@ def main():
         timeout_min=timeout_min,  # max is 60 * 72
         # Below are cluster dependent parameters
         slurm_signal_delay_s=120,
+        wckey="",
         **kwargs,
     )
 
