@@ -40,9 +40,6 @@ def parse_args():
     parser.add_argument("--timeout", default=2800, type=int, help="Duration of the job")
 
     parser.add_argument(
-        "--partition", default="learnfair", type=str, help="Partition where to submit"
-    )
-    parser.add_argument(
         "--use_volta32", action="store_true", help="Big models? Use this"
     )
     parser.add_argument(
